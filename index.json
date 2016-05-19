@@ -1,0 +1,10 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "link": "https://rawgit.com/phramework/schema-data_template/master/data_template/enum.json",
+        "title": "This is a simple form containing a single enum"
+      }
+    }
+  ]
+}
