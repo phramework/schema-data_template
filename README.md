@@ -2,7 +2,7 @@
 A collection of a demo schema data_templates, used to test visually form created for phramework/validate library
 
 ## Instruction
-Fetch links from template via `https://rawgit.com/phramework/schema-data_template/master/index.json`
+Fetch links from template via `https://raw.githubusercontent.com/phramework/schema-data_template/master/index.json
 
 For example:
 ```json
@@ -10,7 +10,7 @@ For example:
   "data": [
     {
       "attributes": {
-        "link": "https://rawgit.com/phramework/schema-data_template/master/data_template/enum.json",
+        "link": "https://raw.githubusercontent.com/phramework/schema-data_template/master/data_template/enum.json",
         "title": "A form with a single enum"
       }
     }

@@ -2,7 +2,7 @@
   "data": [
     {
       "attributes": {
-        "link": "https://rawgit.com/phramework/schema-data_template/master/data_template/enum.json",
+        "link": "https://raw.githubusercontent.com/phramework/schema-data_template/master/data_template/enum.json",
         "title": "This is a simple form containing a single enum"
       }
     }
