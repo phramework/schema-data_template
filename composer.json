@@ -1,0 +1,26 @@
+{
+  "name": "phramework/schema-template",
+  "description": "Validate schema for data_template",
+  "license": "Apache-2.0",
+  "homepage": "https://phramework.github.io/",
+  "type": "project",
+  "authors": [
+    {
+      "name": "Xenofon Spafaridis",
+      "email": "nohponex@gmail.com",
+      "homepage": "https://nohponex.gr"
+    }
+  ],
+  "require": {"php" : ">= 7"},
+  "minimum-stability": "dev",
+  "require-dev": {
+    "phramework/validate": "1.0.0-RC",
+    "phramework/util": "0.0.0-RC"
+  },
+  "scripts": {
+    "test": [
+      "php ./test/test.php"
+    ],
+    "lint": "phpcs -p -s --standard=PSR2 ./test"
+  }
+}
