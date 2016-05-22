@@ -19,3 +19,27 @@ For example:
   ]
 }
 ```
+
+## Development
+
+### test `data_template`s in `./data_template` directory
+
+Requires: 
+- php 7 or newer
+- composer
+
+To install composer dependencies:
+```bash
+composer update
+```
+
+To run the tests:
+```bash
+composer test
+```
+
+## generate new `index.json`
+execute
+```bash
+composer generate-index
+```

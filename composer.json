@@ -14,12 +14,15 @@
   "require": {"php" : ">= 7"},
   "minimum-stability": "dev",
   "require-dev": {
-    "phramework/validate": "1.0.0-RC",
+    "phramework/validate": "1.0.0-RC1",
     "phramework/util": "0.0.0-RC"
   },
   "scripts": {
     "test": [
       "php ./test/test.php"
+    ],
+    "generate-index": [
+      "php ./tools/generate-index.php"
     ],
     "lint": "phpcs -p -s --standard=PSR2 ./test"
   }
