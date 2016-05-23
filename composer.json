@@ -1,5 +1,5 @@
 {
-  "name": "phramework/schema-template",
+  "name": "phramework/schema-data_template",
   "description": "Validate schema for data_template",
   "license": "Apache-2.0",
   "homepage": "https://phramework.github.io/",
@@ -14,16 +14,21 @@
   "require": {"php" : ">= 7"},
   "minimum-stability": "dev",
   "require-dev": {
-    "phramework/validate": "1.0.0-RC1",
+    "phramework/validate": "1.0.0-RC2",
     "phramework/util": "0.0.0-RC"
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Phramework\\DataTemplate\\Validator\\": "Validator"
+    }
   },
   "scripts": {
     "test": [
       "php ./test/test.php"
     ],
-    "generate-index": [
+    "generate": [
       "php ./tools/generate-index.php"
     ],
-    "lint": "phpcs -p -s --standard=PSR2 ./test"
+    "lint": "phpcs -p -s --standard=PSR2 ./Validator ./test"
   }
 }

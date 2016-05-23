@@ -13,7 +13,8 @@ For example:
       "id": "1",
       "attributes": {
         "link": "https://raw.githubusercontent.com/phramework/schema-data_template/master/data_template/enum.json",
-        "title": "A form with a single enum"
+        "title": "A form with a single enum",
+        "description": "A form with a single enum"
       }
     }
   ]
@@ -41,5 +42,5 @@ composer test
 ## generate new `index.json`
 execute
 ```bash
-composer generate-index
+composer generate
 ```

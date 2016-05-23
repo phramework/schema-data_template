@@ -1,11 +1,12 @@
 {
-  "data": [
-    {
-      "id": "0",
-      "attributes": {
-        "link": "https://raw.githubusercontent.com/phramework/schema-data_template/master/data_template/enum.json",
-        "title": "This is a simple form containing a single enum"
-      }
-    }
-  ]
+    "data": [
+        {
+            "id": "dc2f7b",
+            "attributes": {
+                "title": "A form with enum",
+                "description": "This is a simple form containing a single enum",
+                "link": "https:\/\/raw.githubusercontent.com\/phramework\/schema-data_template\/master\/data_template\/enum.json"
+            }
+        }
+    ]
 }

@@ -31,7 +31,7 @@ $linkPrefix = 'https://raw.githubusercontent.com/phramework/schema-data_template
 foreach($dataTemplates as $templateFilePath) {
     $templateFileName = str_replace('//', '/', $templateFilePath);
     $templateFileName = str_replace($schemaDirectory, '' , $templateFileName);
- 
+
     $template = json_decode(file_get_contents($templateFilePath));
 
     $id = substr(md5($templateFileName), 0 , 6);
@@ -41,6 +41,7 @@ foreach($dataTemplates as $templateFilePath) {
         'attributes' => (object) [
             'title'       => $template->title,
             'description' => $template->description,
+            //todo fix urlencode of /
             'link'        => $linkPrefix . urlencode($templateFileName)
         ]
     ];
@@ -50,3 +51,5 @@ file_put_contents(
     $indexFilePath,
     json_encode($structure, JSON_PRETTY_PRINT)
 );
+
+echo "index.json is updated";

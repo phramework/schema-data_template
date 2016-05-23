@@ -3,25 +3,20 @@
 
 require __DIR__ . '/../vendor/autoload.php';
 
+use Phramework\Exceptions\IncorrectParameterException;
+use Phramework\Exceptions\IncorrectParametersException;
+use Phramework\Exceptions\MissingParametersException;
+
 $schemaDirectory = dirname(__DIR__) . '/data_template';
 
-$schemaValidatorFilePath = __DIR__ . '/../validator/schema-data_template.json';
+$dataTemplateValidator = new \Phramework\DataTemplate\Validator\DataTemplate();
 
-if (!file_exists($schemaValidatorFilePath)) {
-    throw new Exception('Schema file not found');
-}
+$validator = $dataTemplateValidator->getValidator()
+    ->setSource(
+        new \Phramework\Exceptions\Source\Pointer('')
+    );
 
-$schema = file_get_contents(
-    $schemaValidatorFilePath
-);
-
-
-$validator = \Phramework\Validate\BaseValidator::createFromJSON(
-    $schema
-)->setSource(
-    new \Phramework\Exceptions\Source\Pointer('')
-);
-
+//Get all .json files from data_template folder
 $dataTemplates = \Phramework\Util\File::directoryToArray(
     $schemaDirectory,
     true,
@@ -45,58 +40,41 @@ $stats = (object) [
 foreach($dataTemplates as $template) {
     echo $template . PHP_EOL;
 
-    $stats->files++;
+    $stats->files++;\Phramework\Exceptions\IncorrectParameterException::class;
 
     try {
         $validator->parse(json_decode(file_get_contents($template)));
 
         $stats->success++;
-        /*} catch (\Phramework\Exceptions\IncorrectParametersException $e) {
-            echo $e->getMessage() . PHP_EOL;
-
-            foreach ($e->getExceptions() as $e) {
-                print_r(json_encode([
-                    $e->getSource(),
-                    $e->getFailure(),
-                    $e->getDetail()
-                ]));
-            }
-
-            goto error;
-        } catch (\Phramework\Exceptions\IncorrectParameterException $e) {
-            echo $e->getMessage() . PHP_EOL;
-
-
-            goto error;
-        } catch (\Phramework\Exceptions\MissingParametersException $e) {
-            echo $e->getMessage() . PHP_EOL;
-            print_r([
-                $e->getSource(),
-                $e->getParameters()
-            ]);
-            goto error;*/
     } catch (Exception $e) {
         $stats->failure++;
 
         echo $e->getMessage() . PHP_EOL;
         switch (get_class($e)) {
-            case \Phramework\Exceptions\IncorrectParameterException::class:
+            case IncorrectParameterException::class:
                 print_r(([
                     $e->getSource(),
                     $e->getFailure(),
                     $e->getDetail()
                 ]));
                 break;
-            case \Phramework\Exceptions\IncorrectParametersException::class:
+            case IncorrectParametersException::class:
                 foreach ($e->getExceptions() as $ex) {
-                    print_r(([
-                        $ex->getSource(),
-                        $ex->getFailure(),
-                        $ex->getDetail()
-                    ]));
+                    $error = [$ex->getSource()];
+
+                    echo $ex->getMessage() . PHP_EOL;
+
+                    if (get_class($ex) == IncorrectParameterException::class) {
+                        $error[] = $ex->getFailure();
+                        $error[] = $ex->getDetail();
+                    } elseif (get_class($ex) == MissingParametersException::class) {
+                        $error[] = $ex->getParameters();
+                    }
+
+                    print_r($error);
                 }
                 break;
-            case \Phramework\Exceptions\MissingParametersException::class:
+            case MissingParametersException::class:
                 print_r([
                     $e->getSource(),
                     $e->getParameters()
