@@ -164,9 +164,7 @@ class DataTemplate
             (object) [
                 'type'       => new EnumValidator(['object']),
                 'properties' => new ObjectValidator(
-                    (object) [
-                        //'my_multi_select' => $arrayProperty
-                    ],
+                    (object) [],
                     [],
                     new OneOf(
                         $arrayProperty,
@@ -179,10 +177,14 @@ class DataTemplate
                     )
                 ),
                 //todo add validation callback
-                'required'   => new ArrayValidator(
+                'required'   => (new ArrayValidator(
                     0,
                     null,
                     new StringValidator()
+                ))->setValidateCallback(
+                    function (Result $validateResult, BaseValidator $validator) {
+                        return $validateResult;
+                    }
                 ),
                 'title'       => new StringValidator(),
                 'description' => new StringValidator(),
@@ -212,9 +214,10 @@ class DataTemplate
                 'x-visibility'  => (new ObjectValidator(
                 ))->setValidateCallback(
                     function (Result $validateResult, BaseValidator $validator) {
-                    //todo validate enum-titles keys are defined in enum
-                    return $validateResult;
-                }),
+                        //todo validate enum-titles keys are defined in enum
+                        return $validateResult;
+                    }
+                ),
                 'minProperties' => (new UnsignedIntegerValidator())
                     ->setDefault(0),
                 'maxProperties' => (new UnsignedIntegerValidator())
@@ -225,11 +228,6 @@ class DataTemplate
                 'properties'
             ],
             false
-        );
-
-        file_put_contents(
-            __DIR__ . 'schema.json',
-            $this->validator->toJSON(true)
         );
     }
 }

@@ -1,12 +1,36 @@
 {
-    "data": [
+    "root": [
         {
-            "id": "dc2f7b",
-            "attributes": {
-                "title": "A form with enum",
-                "description": "This is a simple form containing a single enum",
-                "link": "https:\/\/raw.githubusercontent.com\/phramework\/schema-data_template\/master\/data_template\/enum.json"
-            }
+            "id": "84aa5c",
+            "title": "A form with enum",
+            "description": "This is a simple form containing a single enum",
+            "link": "https:\/\/raw.githubusercontent.com\/phramework\/schema-data_template\/master\/data_template\/enum.json"
+        },
+        {
+            "id": "cf1af4",
+            "title": "A form with a multi select array",
+            "description": "A form with a single multi select array",
+            "link": "https:\/\/raw.githubusercontent.com\/phramework\/schema-data_template\/master\/data_template\/multi-select.json"
+        },
+        {
+            "id": "1311a2",
+            "title": "A form with number",
+            "description": "This is a simple form containing a single number",
+            "link": "https:\/\/raw.githubusercontent.com\/phramework\/schema-data_template\/master\/data_template\/number.json"
+        }
+    ],
+    "\/x-visibility": [
+        {
+            "id": "4922b9",
+            "title": "A form with x-visibility",
+            "description": "This is a simple form containing a enum and a number with x-visibility",
+            "link": "https:\/\/raw.githubusercontent.com\/phramework\/schema-data_template\/master\/data_template\/x-visibility\/enum-number.json"
+        },
+        {
+            "id": "bd1e30",
+            "title": "A form with x-visibility",
+            "description": "This is a simple form containing a enum and a enum with x-visibility",
+            "link": "https:\/\/raw.githubusercontent.com\/phramework\/schema-data_template\/master\/data_template\/x-visibility\/enum-enum.json"
         }
     ]
 }

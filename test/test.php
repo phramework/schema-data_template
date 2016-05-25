@@ -43,7 +43,15 @@ foreach($dataTemplates as $template) {
     $stats->files++;\Phramework\Exceptions\IncorrectParameterException::class;
 
     try {
-        $validator->parse(json_decode(file_get_contents($template)));
+        $parsed = json_decode(file_get_contents($template));
+        if (json_last_error() !== JSON_ERROR_NONE) {
+            throw new \Exception(sprintf(
+                '%s is not a valid JSON',
+                $template
+            ));
+        }
+        
+        $validator->parse($parsed);
 
         $stats->success++;
     } catch (Exception $e) {

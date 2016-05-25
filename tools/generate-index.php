@@ -3,7 +3,9 @@
 
 require __DIR__ . '/../vendor/autoload.php';
 
-$schemaDirectory = dirname(__DIR__) . '/data_template/';
+use Phramework\Util\File;
+
+$schemaDirectory = dirname(__DIR__) . '/data_template';
 
 $indexFilePath = dirname(__DIR__) . '/index.json';
 
@@ -11,9 +13,48 @@ if (!file_exists($indexFilePath)) {
     throw new Exception('Index file not found');
 }
 
-$dataTemplates = \Phramework\Util\File::directoryToArray(
+$linkPrefix = 'https://raw.githubusercontent.com/phramework/schema-data_template/master/data_template/';
+
+$list = function (&$structure, $categoryKey, $files) use ($linkPrefix, $schemaDirectory)
+{
+    $structure->{$categoryKey} = [];
+
+    foreach ($files as $templateFilePath) {
+        $templateFileName = str_replace('//', '/', $templateFilePath);
+        $templateFileName = str_replace($schemaDirectory, '', $templateFileName);
+
+        $template = json_decode(file_get_contents($templateFilePath));
+
+        if (json_last_error() !== JSON_ERROR_NONE) {
+            throw new \Exception(sprintf(
+                '%s is not a valid JSON',
+                $templateFilePath
+            ));
+        }
+
+        $id = substr(md5($templateFileName), 0, 6);
+
+        //trim spaces and slashes
+        $templateFileName = trim($templateFileName, '/');
+
+        //push
+        $structure->{$categoryKey}[] = (object) [
+            'id'          => $id,
+            'title'       => $template->title,
+            'description' => $template->description,
+            //todo fix urlencode of /
+            'link'        => $linkPrefix . implode('/', array_map('urlencode', explode('/', $templateFileName)))
+        ];
+    }
+};
+
+$structure = (object) [];
+
+//list root files
+
+$rootFiles = File::directoryToArray(
     $schemaDirectory,
-    true,
+    false,
     false,
     true,
     '/^\.|\.\.$/',
@@ -22,29 +63,38 @@ $dataTemplates = \Phramework\Util\File::directoryToArray(
     false
 );
 
-$structure = (object) [
-    'data' => []
-];
+$list($structure, 'root', $rootFiles);
 
-$linkPrefix = 'https://raw.githubusercontent.com/phramework/schema-data_template/master/data_template/';
+//list root directories
 
-foreach($dataTemplates as $templateFilePath) {
-    $templateFileName = str_replace('//', '/', $templateFilePath);
-    $templateFileName = str_replace($schemaDirectory, '' , $templateFileName);
+$directories = File::directoryToArray(
+    $schemaDirectory,
+    false,
+    true,
+    false,
+    '/^\.|\.\.$/',
+    ['json'],
+    false,
+    false
+);
 
-    $template = json_decode(file_get_contents($templateFilePath));
+foreach ($directories as $directory) {
+    $directoryFiles = File::directoryToArray(
+        $directory,
+        true,
+        false,
+        true,
+        '/^\.|\.\.$/',
+        ['json'],
+        false,
+        false
+    );
 
-    $id = substr(md5($templateFileName), 0 , 6);
+    if (empty($directoryFiles)) {
+        continue;
+    }
 
-    $structure->data[] = (object) [
-        'id' => $id,
-        'attributes' => (object) [
-            'title'       => $template->title,
-            'description' => $template->description,
-            //todo fix urlencode of /
-            'link'        => $linkPrefix . urlencode($templateFileName)
-        ]
-    ];
+    $list($structure, str_replace($schemaDirectory, '' ,$directory), $directoryFiles);
 }
 
 file_put_contents(
@@ -52,4 +102,4 @@ file_put_contents(
     json_encode($structure, JSON_PRETTY_PRINT)
 );
 
-echo "index.json is updated";
+echo 'index.json is updated' . PHP_EOL;
