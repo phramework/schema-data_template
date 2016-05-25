@@ -39,7 +39,7 @@ class DataTemplate
     /**
      * @var ObjectValidator
      */
-    protected  $validator;
+    protected $validator;
 
     /**
      * @return ObjectValidator
@@ -160,9 +160,6 @@ class DataTemplate
             $arrayProperty->required,
             ['items']
         );
-
-
-        file_put_contents('schema.json', $dateTimeProperty->toJSON(TRUE));
 
         $this->validator = new ObjectValidator(
             (object) [

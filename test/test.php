@@ -37,10 +37,10 @@ $stats = (object) [
     'failure' => 0
 ];
 
-foreach($dataTemplates as $template) {
+foreach ($dataTemplates as $template) {
     echo $template . PHP_EOL;
 
-    $stats->files++;\Phramework\Exceptions\IncorrectParameterException::class;
+    $stats->files++;
 
     try {
         $parsed = json_decode(file_get_contents($template));
@@ -104,7 +104,7 @@ echo sprintf(
 ) . PHP_EOL;
 
 if ($stats->failure > 0) {
-    return 1;
+    exit(1);
 }
 
-return 0;
+exit(0);
