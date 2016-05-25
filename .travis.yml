@@ -1,0 +1,10 @@
+language: php
+php:
+  - 7.0
+install:
+ - composer self-update
+ - composer install --no-interaction --dev
+before_script:
+script:
+ - php ./test/test.php
+after_script:

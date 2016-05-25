@@ -1,0 +1,25 @@
+{
+  "type": "object",
+  "title": "A form with number",
+  "description": "This is a simple form containing a single number",
+  "properties": {
+    "my_number": {
+      "type": "number",
+      "order": 1,
+      "title": "My number",
+      "description": "This is my number",
+      "minimum": 10.05,
+      "maximum": 30.75
+    }
+  },
+  "required": [
+    "my_number"
+  ],
+  "meta": {
+    "show_title": false,
+    "show_description": false,
+    "show_properties_title": true,
+    "show_properties_description": true,
+    "submit_trigger": "platform"
+  }
+}
