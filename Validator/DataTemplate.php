@@ -49,9 +49,9 @@ class DataTemplate
         return $this->validator;
     }
 
-    public function __construct()
+    private function baseProperty() : ObjectValidator
     {
-        $baseProperty = new ObjectValidator(
+        return new ObjectValidator(
             (object) [
                 //'type'        => new EnumValidator(),
                 'order'       => new UnsignedIntegerValidator(),
@@ -61,11 +61,14 @@ class DataTemplate
             ],
             ['type']
         );
+    }
 
+    public function __construct()
+    {
         /**
          * enum
          */
-        $enumProperty = clone $baseProperty;
+        $enumProperty = self::baseProperty();
         $enumProperty->properties->type = new EnumValidator(['enum']);
         $enumProperty->properties->enum = new ArrayValidator(
             0,
@@ -86,15 +89,14 @@ class DataTemplate
                     null,
                     [],
                     new StringValidator()
-                ))->setValidateCallback(
+                ))/*->setValidateCallback(
                     function (Result $validateResult, BaseValidator $validator) {
                         //todo validate enum-titles keys are defined in enum
                         return $validateResult;
                     }
-                )
+                )*/
             ]
         );
-
         $enumProperty->required = array_merge(
             $enumProperty->required,
             ['enum']
@@ -103,7 +105,7 @@ class DataTemplate
         /**
          * number
          */
-        $numberProperty = clone $baseProperty;
+        $numberProperty = self::baseProperty();
         $numberProperty->properties->type    = new EnumValidator(['number']);
         $numberProperty->properties->minimum = new NumberValidator();
         $numberProperty->properties->maximum = new NumberValidator();
@@ -112,7 +114,7 @@ class DataTemplate
         /**
          * integer
          */
-        $integerProperty = clone $baseProperty;
+        $integerProperty = self::baseProperty();
         $integerProperty->properties->type    = new EnumValidator(['integer']);
         $integerProperty->properties->minimum = new IntegerValidator();
         $integerProperty->properties->maximum = new IntegerValidator();
@@ -121,7 +123,7 @@ class DataTemplate
         /**
          * string
          */
-        $stringProperty = clone $baseProperty;
+        $stringProperty = self::baseProperty();
         $stringProperty->properties->type      = new EnumValidator(['string']);
         $stringProperty->properties->minLength = new UnsignedIntegerValidator();
         $stringProperty->properties->maxLength = new UnsignedIntegerValidator();
@@ -130,8 +132,8 @@ class DataTemplate
         /**
          * date
          */
-        $dateProperty = clone $baseProperty;
-        $dateProperty->properties->type = new EnumValidator(['date']);
+        $dateProperty = self::baseProperty();
+        $dateProperty->properties->type          = new EnumValidator(['date']);
         $dateProperty->properties->default       = new DateValidator();
         $dateProperty->properties->formatMinimum = new DateValidator();
         $dateProperty->properties->formatMinimum = new DateValidator();
@@ -139,7 +141,7 @@ class DataTemplate
         /**
          * date-time
          */
-        $dateTimeProperty = clone $baseProperty;
+        $dateTimeProperty = self::baseProperty();
         $dateTimeProperty->properties->type          = new EnumValidator(['date-time']);
         $dateTimeProperty->properties->default       = new DatetimeValidator();
         $dateTimeProperty->properties->formatMinimum = new DatetimeValidator();
@@ -148,23 +150,26 @@ class DataTemplate
         /**
          * array
          */
-        $arrayProperty = clone $baseProperty;
-        $arrayProperty->properties->type = new EnumValidator(['array']);
+        $arrayProperty = self::baseProperty();
+        $arrayProperty->properties->type        = new EnumValidator(['array']);
         $arrayProperty->properties->minItems    = new UnsignedIntegerValidator();
         $arrayProperty->properties->maxItems    = new UnsignedIntegerValidator();
         $arrayProperty->properties->uniqueItems = new BooleanValidator();
         $arrayProperty->properties->items       = $enumProperty;
-
         $arrayProperty->required = array_merge(
             $arrayProperty->required,
             ['items']
         );
 
+
+        file_put_contents('schema.json', $dateTimeProperty->toJSON(TRUE));
+
         $this->validator = new ObjectValidator(
             (object) [
                 'type'       => new EnumValidator(['object']),
                 'properties' => new ObjectValidator(
-                    (object) [],
+                    (object) [
+                    ],
                     [],
                     new OneOf(
                         $arrayProperty,

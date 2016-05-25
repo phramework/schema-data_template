@@ -1,0 +1,25 @@
+{
+  "type": "object",
+  "title": "A form with date",
+  "description": "This is a simple form containing a single date",
+  "properties": {
+    "date": {
+      "type": "date",
+      "order": 1,
+      "title": "My date",
+      "description": "This is my date",
+      "formatMinimum": "2015-01-09",
+      "formatMaximum": "2010-12-21"
+    }
+  },
+  "required": [
+    "date"
+  ],
+  "meta": {
+    "show_title": true,
+    "show_description": true,
+    "show_properties_title": true,
+    "show_properties_description": true,
+    "submit_trigger": "platform"
+  }
+}

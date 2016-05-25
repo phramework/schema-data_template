@@ -14,7 +14,7 @@
   "require": {"php" : ">= 7"},
   "minimum-stability": "dev",
   "require-dev": {
-    "phramework/validate": "1.0.0-RC2",
+    "phramework/validate": "1.0.0-RC3",
     "phramework/util": "0.0.0-RC"
   },
   "autoload-dev": {
