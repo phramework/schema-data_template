@@ -1,22 +1,10 @@
 {
     "root": [
         {
-            "id": "84aa5c",
-            "title": "A form with enum",
-            "description": "This is a simple form containing a single enum",
-            "link": "https:\/\/raw.githubusercontent.com\/phramework\/schema-data_template\/master\/data_template\/enum.json"
-        },
-        {
             "id": "cf1af4",
             "title": "A form with a multi select array",
             "description": "A form with a single multi select array",
             "link": "https:\/\/raw.githubusercontent.com\/phramework\/schema-data_template\/master\/data_template\/multi-select.json"
-        },
-        {
-            "id": "1311a2",
-            "title": "A form with number",
-            "description": "This is a simple form containing a single number",
-            "link": "https:\/\/raw.githubusercontent.com\/phramework\/schema-data_template\/master\/data_template\/number.json"
         }
     ],
     "\/x-visibility": [
@@ -31,6 +19,98 @@
             "title": "A form with x-visibility",
             "description": "This is a simple form containing a enum and a enum with x-visibility",
             "link": "https:\/\/raw.githubusercontent.com\/phramework\/schema-data_template\/master\/data_template\/x-visibility\/enum-enum.json"
+        }
+    ],
+    "\/date": [
+        {
+            "id": "89fc5d",
+            "title": "A form with date",
+            "description": "This is a simple form containing a single date",
+            "link": "https:\/\/raw.githubusercontent.com\/phramework\/schema-data_template\/master\/data_template\/date\/date.json"
+        }
+    ],
+    "\/enum": [
+        {
+            "id": "65ad96",
+            "title": "object title",
+            "description": "object description",
+            "link": "https:\/\/raw.githubusercontent.com\/phramework\/schema-data_template\/master\/data_template\/enum\/ENUM-submit_trigger%3Don_change-display%3Dstars-show_title%3D0-show_description%3D0-show_properties_title%3D1-show_properties_description%3D0.json"
+        },
+        {
+            "id": "785529",
+            "title": "A form with enum",
+            "description": "This is a simple form containing a single enum",
+            "link": "https:\/\/raw.githubusercontent.com\/phramework\/schema-data_template\/master\/data_template\/enum\/enum.json"
+        },
+        {
+            "id": "a6e2b6",
+            "title": "object title",
+            "description": "object description",
+            "link": "https:\/\/raw.githubusercontent.com\/phramework\/schema-data_template\/master\/data_template\/enum\/ENUM-submit_trigger%3Dbutton-display%3Dradio-show_title%3D0-show_description%3D0-show_properties_title%3D1-show_properties_description%3D0.json"
+        },
+        {
+            "id": "4a1470",
+            "title": "object title",
+            "description": "object description",
+            "link": "https:\/\/raw.githubusercontent.com\/phramework\/schema-data_template\/master\/data_template\/enum\/ENUM-submit_trigger%3Don_change-display%3Dselect-show_title%3D0-show_description%3D0-show_properties_title%3D1-show_properties_description%3D0.json"
+        },
+        {
+            "id": "d728b6",
+            "title": "object title",
+            "description": "object description",
+            "link": "https:\/\/raw.githubusercontent.com\/phramework\/schema-data_template\/master\/data_template\/enum\/ENUM-submit_trigger%3Dplatform-display%3Dplatform-show_title%3D1-show_description%3D1-show_properties_title%3D1-show_properties_description%3D1.json"
+        },
+        {
+            "id": "eb86c3",
+            "title": "object title",
+            "description": "object description",
+            "link": "https:\/\/raw.githubusercontent.com\/phramework\/schema-data_template\/master\/data_template\/enum\/ENUM-submit_trigger%3Dbutton-display%3Dstars-show_title%3D0-show_description%3D0-show_properties_title%3D1-show_properties_description%3D0.json"
+        },
+        {
+            "id": "13c919",
+            "title": "object title",
+            "description": "object description",
+            "link": "https:\/\/raw.githubusercontent.com\/phramework\/schema-data_template\/master\/data_template\/enum\/ENUM-submit_trigger%3Don_change-display%3Dradio-show_title%3D0-show_description%3D0-show_properties_title%3D1-show_properties_description%3D0.json"
+        },
+        {
+            "id": "efc53f",
+            "title": "object title",
+            "description": "object description",
+            "link": "https:\/\/raw.githubusercontent.com\/phramework\/schema-data_template\/master\/data_template\/enum\/ENUM-submit_trigger%3Dbutton-display%3Dselect-show_title%3D0-show_description%3D0-show_properties_title%3D1-show_properties_description%3D0.json"
+        }
+    ],
+    "\/number": [
+        {
+            "id": "90ed3d",
+            "title": "object title",
+            "description": "object description",
+            "link": "https:\/\/raw.githubusercontent.com\/phramework\/schema-data_template\/master\/data_template\/number\/NUMBER-submit_trigger%3Dbutton-display%3Dscroll-show_title%3D0-show_description%3D0-show_properties_title%3D1-show_properties_description%3D0.json"
+        },
+        {
+            "id": "f745ec",
+            "title": "object title",
+            "description": "object description",
+            "link": "https:\/\/raw.githubusercontent.com\/phramework\/schema-data_template\/master\/data_template\/number\/NUMBER-submit_trigger%3Dplatform-display%3Dplatform-show_title%3D1-show_description%3D1-show_properties_title%3D1-show_properties_description%3D1.json"
+        },
+        {
+            "id": "b93d3d",
+            "title": "A form with number",
+            "description": "This is a simple form containing a single number",
+            "link": "https:\/\/raw.githubusercontent.com\/phramework\/schema-data_template\/master\/data_template\/number\/number.json"
+        },
+        {
+            "id": "97e2b5",
+            "title": "object title",
+            "description": "object description",
+            "link": "https:\/\/raw.githubusercontent.com\/phramework\/schema-data_template\/master\/data_template\/number\/NUMBER-submit_trigger%3Dbutton-display%3Dvalue-show_title%3D0-show_description%3D0-show_properties_title%3D1-show_properties_description%3D0.json"
+        }
+    ],
+    "\/date-time": [
+        {
+            "id": "3ff3a7",
+            "title": "A form with date-time",
+            "description": "This is a simple form containing a single date-time",
+            "link": "https:\/\/raw.githubusercontent.com\/phramework\/schema-data_template\/master\/data_template\/date-time\/date-time.json"
         }
     ]
 }

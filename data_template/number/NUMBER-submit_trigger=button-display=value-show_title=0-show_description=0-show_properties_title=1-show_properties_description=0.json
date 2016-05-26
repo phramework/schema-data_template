@@ -1,0 +1,28 @@
+{
+  "type": "object",
+  "title": "object title",
+  "description": "object description",
+  "properties": {
+    "my_number": {
+      "type": "number",
+      "order": 1,
+      "title": "property title",
+      "description": "property description",
+      "minimum": 0,
+      "maximum": 100,
+      "meta": {
+        "display": "value"
+      }
+    }
+  },
+  "required": [
+    "my_number"
+  ],
+  "meta": {
+    "show_title": false,
+    "show_description": false,
+    "show_properties_title": true,
+    "show_properties_description": false,
+    "submit_trigger": "button"
+  }
+}
