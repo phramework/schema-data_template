@@ -1,0 +1,81 @@
+{
+  "type": "object",
+  "title": "A form with x-visibility ",
+  "description": "This is a simple form containing a field1 as enum, field2 as enum with x-visibility depending on field1, field3 is depending on field2",
+  "properties": {
+    "field1": {
+      "type": "enum",
+      "order": 1,
+      "title": "field1",
+      "description": "This is field1",
+      "enum": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "meta": {
+        "enum-titles": {
+          "1": "First",
+          "2": "Second",
+          "3": "Third",
+          "4": "Fourth",
+          "5": "Fifth"
+        },
+        "display": "platform"
+      }
+    },
+    "field2": {
+      "type": "enum",
+      "order": 2,
+      "title": "field2",
+      "description": "This is field2",
+      "enum": [
+        "yes",
+        "no"
+      ],
+      "meta": {
+        "enum-titles": {
+          "yes": "yes",
+          "no": "no"
+        },
+        "display": "platform"
+      }
+    },
+    "field3": {
+      "type": "number",
+      "order": 2,
+      "title": "field3",
+      "description": "This is field3"
+    }
+  },
+  "required": [
+    "field1"
+  ],
+  "x-visibility": {
+    "field2": [
+      "member",
+      "field1",
+      [
+        "1",
+        "2",
+        "3"
+      ]
+    ],
+    "field3": [
+      "member",
+      "field2",
+      [
+        "yes"
+      ]
+    ]
+  },
+  "meta": {
+    "show_title": true,
+    "show_description": true,
+    "show_properties_title": true,
+    "show_properties_description": true,
+    "submit_trigger": "button"
+  }
+}
