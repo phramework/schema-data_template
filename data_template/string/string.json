@@ -1,0 +1,25 @@
+{
+  "type": "object",
+  "title": "A form with string",
+  "description": "This is a simple form containing a single string",
+  "properties": {
+    "my_string": {
+      "type": "string",
+      "order": 1,
+      "title": "My string",
+      "description": "This is my string",
+      "minLength": 2,
+      "maxLength": 10
+    }
+  },
+  "required": [
+    "my_string"
+  ],
+  "meta": {
+    "show_title": false,
+    "show_description": false,
+    "show_properties_title": true,
+    "show_properties_description": true,
+    "submit_trigger": "button"
+  }
+}

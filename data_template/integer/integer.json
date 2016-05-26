@@ -1,0 +1,25 @@
+{
+  "type": "object",
+  "title": "A form with integer",
+  "description": "This is a simple form containing a single integer",
+  "properties": {
+    "my_integer": {
+      "type": "integer",
+      "order": 1,
+      "title": "My integer",
+      "description": "This is my integer",
+      "minimum": 10,
+      "maximum": 30
+    }
+  },
+  "required": [
+    "my_integer"
+  ],
+  "meta": {
+    "show_title": false,
+    "show_description": false,
+    "show_properties_title": true,
+    "show_properties_description": true,
+    "submit_trigger": "button"
+  }
+}

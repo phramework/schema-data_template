@@ -1,12 +1,5 @@
 {
-    "root": [
-        {
-            "id": "cf1af4",
-            "title": "A form with a multi select array",
-            "description": "A form with a single multi select array",
-            "link": "https:\/\/raw.githubusercontent.com\/phramework\/schema-data_template\/master\/data_template\/multi-select.json"
-        }
-    ],
+    "root": [],
     "\/x-visibility": [
         {
             "id": "4922b9",
@@ -31,6 +24,22 @@
             "title": "A form with x-visibility",
             "description": "This is a simple form containing a enum and a enum with x-visibility",
             "link": "https:\/\/raw.githubusercontent.com\/phramework\/schema-data_template\/master\/data_template\/x-visibility\/enum-enum.json"
+        }
+    ],
+    "\/integer": [
+        {
+            "id": "5188b9",
+            "title": "A form with integer",
+            "description": "This is a simple form containing a single integer",
+            "link": "https:\/\/raw.githubusercontent.com\/phramework\/schema-data_template\/master\/data_template\/integer\/integer.json"
+        }
+    ],
+    "\/string": [
+        {
+            "id": "a12b3c",
+            "title": "A form with string",
+            "description": "This is a simple form containing a single string",
+            "link": "https:\/\/raw.githubusercontent.com\/phramework\/schema-data_template\/master\/data_template\/string\/string.json"
         }
     ],
     "\/date": [
@@ -123,6 +132,14 @@
             "title": "A form with date-time",
             "description": "This is a simple form containing a single date-time",
             "link": "https:\/\/raw.githubusercontent.com\/phramework\/schema-data_template\/master\/data_template\/date-time\/date-time.json"
+        }
+    ],
+    "\/array": [
+        {
+            "id": "fc4ef7",
+            "title": "A form with a multi select array",
+            "description": "A form with a single multi select array",
+            "link": "https:\/\/raw.githubusercontent.com\/phramework\/schema-data_template\/master\/data_template\/array\/multi-select.json"
         }
     ]
 }
