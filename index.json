@@ -15,6 +15,18 @@
             "link": "https:\/\/raw.githubusercontent.com\/phramework\/schema-data_template\/master\/data_template\/x-visibility\/enum-number.json"
         },
         {
+            "id": "5952a6",
+            "title": "A form with x-visibility ",
+            "description": "This is a simple form containing a field1 as enum, field2 as enum with x-visibility depending on field1, field3 is depending on field1",
+            "link": "https:\/\/raw.githubusercontent.com\/phramework\/schema-data_template\/master\/data_template\/x-visibility\/3rd-depending-on-1st.json"
+        },
+        {
+            "id": "cf59ab",
+            "title": "A form with x-visibility ",
+            "description": "This is a simple form containing a field1 as enum, field2 as enum with x-visibility depending on field1, field3 is depending on field2",
+            "link": "https:\/\/raw.githubusercontent.com\/phramework\/schema-data_template\/master\/data_template\/x-visibility\/3rd-depending-on-2nd.json"
+        },
+        {
             "id": "bd1e30",
             "title": "A form with x-visibility",
             "description": "This is a simple form containing a enum and a enum with x-visibility",
