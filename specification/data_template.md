@@ -151,7 +151,7 @@ type         |string||
 enum         |array ||An array with the allowed values
 title        |string||
 description  |string||
-[meta]       |object|`{}`| See https://gitlab.vivantehealth.com:8443/kimon/ostomate-api/wikis/meta-display-proposal
+[meta]       |object|`{}`| 
 
 ###### meta
 
@@ -190,15 +190,15 @@ Example:
 ###### number
 keyword members:
 
-key         | type | default    | description
-------------|------|------------|-------------
+key           | type | default    | description
+--------------|------|------------|-------------
 type          |string||
 [order]       |integer||
 title         |string||
 description   |string||
 [minimum]     |number|`null`|
 [maximum]     |number|`null`|
-[meta]        |object|`{}`  |See https://gitlab.vivantehealth.com:8443/kimon/ostomate-api/wikis/meta-display-proposal    
+[meta]        |object|`{}`  |    
 
 ###### integer
 
@@ -216,7 +216,7 @@ title         |string ||
 description   |string ||
 [minLength]   |integer|`0`|
 [maxLength]   |integer|`null`|
-[meta]        |object |`{}`|See https://gitlab.vivantehealth.com:8443/kimon/ostomate-api/wikis/meta-display-proposal
+[meta]        |object |`{}`|
 
 ###### date
 SQL date `Y-m-d` for example `"2015-03-09"`
@@ -237,8 +237,8 @@ SQL date `Y-m-d H:i:s` for example `"2015-03-09 00:10:00"`
 
 keyword members:
 
-key           | type | default    | description
---------------|------|------------|-------------
+key            | type | default    | description
+---------------|------|------------|-------------
 type           |string||
 [order]        |integer||
 title          |string||
@@ -254,7 +254,7 @@ keyword members:
 key           | type  | default    | description
 --------------|-------|------------|-------------
 type          |string ||
-items         |object |`null`|Describes what elements are allowed to use as array items, must be a valid Shema, only type `"enum"` is supported.
+items         |object |`null`|Describes what elements are allowed to use as array items, must be a valid schema, only type `"enum"` is supported.
 [order]       |integer||
 title         |string ||
 description   |string ||
