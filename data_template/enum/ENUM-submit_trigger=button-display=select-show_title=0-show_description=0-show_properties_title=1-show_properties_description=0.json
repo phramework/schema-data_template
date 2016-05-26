@@ -1,36 +1,36 @@
 {
-    "type": "object",
-    "title": "object title",
-    "description": "object description",
-    "properties": {
-        "my_enum": {
-            "type": "enum",
-            "order": 1,
-            "title": "property title",
-            "description": "property description",
-            "enum": [
-                "1",
-                "2",
-                "3"
-            ],
-            "meta": {
-                "enum-titles": {
-                    "1": "First",
-                    "2": "Second",
-                    "3": "Third"
-                },
-                "display": "select"
-            }
-        }
-    },
-    "required": [
-        "my_enum"
-    ],
-    "meta": {
-        "show_title": false,
-        "show_description": false,
-        "show_properties_title": true,
-        "show_properties_description": false,
-        "submit_trigger": "button"
+  "type": "object",
+  "title": "object title",
+  "description": "object description",
+  "properties": {
+    "my_enum": {
+      "type": "enum",
+      "order": 1,
+      "title": "property title",
+      "description": "property description",
+      "enum": [
+        "1",
+        "2",
+        "3"
+      ],
+      "meta": {
+        "enum-titles": {
+          "1": "First",
+          "2": "Second",
+          "3": "Third"
+        },
+        "display": "select"
+      }
     }
+  },
+  "required": [
+    "my_enum"
+  ],
+  "meta": {
+    "show_title": false,
+    "show_description": false,
+    "show_properties_title": true,
+    "show_properties_description": false,
+    "submit_trigger": "button"
+  }
 }
