@@ -19,6 +19,9 @@ composer generate
 
 Push requests with failed CI build status cannot be accepted.
 
+# JSON
+- JSON files must be formatted using "pretty print" with 2 spaces indentation.
+ 
 # PHP Validator and tests
 All php code MUST follow
 - [PSR-2: Coding Style Guide](http://www.php-fig.org/psr/psr-2/) 
