@@ -1,0 +1,42 @@
+{
+  "type": "object",
+  "title": "A form with a multi select array",
+  "description": "A form with a single multi select array",
+  "properties": {
+    "my_multi_select": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 2,
+      "title": "Demo multi select (array)",
+      "description": "Pick 1 or 2 options",
+      "items": {
+        "type": "enum",
+        "enum": [
+          "one",
+          "two",
+          "three",
+          "four"
+        ],
+        "meta": {
+          "enum-titles": {
+            "one": "one",
+            "two": "two",
+            "three": "three",
+            "four": "four"
+          }
+        }
+      },
+      "uniqueItems": true
+    }
+  },
+  "required": [
+    "my_multi_select"
+  ],
+  "meta": {
+    "show_title": false,
+    "show_description": false,
+    "show_properties_title": true,
+    "show_properties_description": true,
+    "submit_trigger": "platform"
+  }
+}

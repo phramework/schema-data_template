@@ -1,0 +1,68 @@
+{
+  "type": "object",
+  "title": "A form with x-visibility",
+  "description": "This is a simple form containing a enum and a enum with x-visibility",
+  "properties": {
+    "field1": {
+      "type": "enum",
+      "order": 1,
+      "title": "field1",
+      "description": "This is field1",
+      "enum": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "meta": {
+        "enum-titles": {
+          "1": "First",
+          "2": "Second",
+          "3": "Third",
+          "4": "Fourth",
+          "5": "Fifth"
+        },
+        "display": "platform"
+      }
+    },
+    "field2": {
+      "type": "enum",
+      "order": 2,
+      "title": "field2",
+      "description": "This is field2",
+      "enum": [
+        "yes",
+        "no"
+      ],
+      "meta": {
+        "enum-titles": {
+          "yes": "yes",
+          "no": "no"
+        },
+        "display": "platform"
+      }
+    }
+  },
+  "required": [
+    "field1"
+  ],
+  "x-visibility": {
+    "field2": [
+      "member",
+      "field1",
+      [
+        "1",
+        "2",
+        "3"
+      ]
+    ]
+  },
+  "meta": {
+    "show_title": true,
+    "show_description": true,
+    "show_properties_title": true,
+    "show_properties_description": true,
+    "submit_trigger": "platform"
+  }
+}
