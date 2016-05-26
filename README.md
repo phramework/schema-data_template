@@ -35,8 +35,8 @@ For example:
 ### test `data_template`s in `./data_template` directory
 
 Requires: 
-- php 7 or newer
-- composer
+- PHP 7 or newer
+- [composer](https://getcomposer.org/)
 
 To install composer dependencies:
 ```bash
