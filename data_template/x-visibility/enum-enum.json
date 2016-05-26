@@ -63,6 +63,6 @@
     "show_description": true,
     "show_properties_title": true,
     "show_properties_description": true,
-    "submit_trigger": "platform"
+    "submit_trigger": "button"
   }
 }

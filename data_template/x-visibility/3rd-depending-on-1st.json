@@ -1,7 +1,7 @@
 {
   "type": "object",
-  "title": "A form with x-visibility",
-  "description": "This is a simple form containing a enum and a number with x-visibility",
+  "title": "A form with x-visibility ",
+  "description": "This is a simple form containing a field1 as enum, field2 as enum with x-visibility depending on field1, field3 is depending on field1",
   "properties": {
     "field1": {
       "type": "enum",
@@ -27,10 +27,27 @@
       }
     },
     "field2": {
-      "type": "number",
+      "type": "enum",
       "order": 2,
       "title": "field2",
-      "description": "This is field2"
+      "description": "This is field2",
+      "enum": [
+        "yes",
+        "no"
+      ],
+      "meta": {
+        "enum-titles": {
+          "yes": "yes",
+          "no": "no"
+        },
+        "display": "platform"
+      }
+    },
+    "field3": {
+      "type": "number",
+      "order": 2,
+      "title": "field3",
+      "description": "This is field3"
     }
   },
   "required": [
@@ -44,6 +61,14 @@
         "1",
         "2",
         "3"
+      ]
+    ],
+    "field3": [
+      "member",
+      "field1",
+      [
+        "3",
+        "4"
       ]
     ]
   },
