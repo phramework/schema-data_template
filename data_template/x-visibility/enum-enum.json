@@ -1,6 +1,6 @@
 {
   "type": "object",
-  "title": "A form with x-visibility",
+  "title": "field2 (an enum) depending on field 1",
   "description": "This is a simple form containing a enum and a enum with x-visibility",
   "properties": {
     "field1": {
