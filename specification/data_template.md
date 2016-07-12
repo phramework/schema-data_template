@@ -85,7 +85,7 @@ key              | type |default| description
 [`additionalProperties`]|bool   |`false`|If set, MUST always be `false`
 [`minProperties`]|integer|`0`     |
 [`maxProperties`]|integer&#124;`null`|`null`|
-[[`x-visibility`]|object|`{}`   |A set of rules to conditionally control the visibility/existance of a property
+[`x-visibility`] |object|`{}`   |A set of rules to conditionally control the visibility/existance of a property
 
 *Members in square brackets `[]` are optional*
 
@@ -103,7 +103,7 @@ key                            |type| default    |platform| description
 [`show_description`]           |bool|`false`     |        |Show form's description
 [`show_properties_title`]      |bool|`true`      |        |Show title of each question
 [`show_properties_description`]|bool|`false`     |        |Show description of each question
-[`show_in_groups_of`]          |bool|`1`         |`mobile`|Display form's questions in groups, this directive member is only supported by mobiles *TODO*
+[`show_in_groups_of`]          |string|`"1"`     |`mobile`|Display form's questions in groups, this directive member is only supported by mobiles *TODO*
 [`submit_trigger`]             |bool|`"platform"`|        |Allowed values: `"platform"`, `"on_change"`, `"button"`
 
 Example:
