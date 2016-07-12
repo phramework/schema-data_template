@@ -85,6 +85,7 @@ key              | type |default| description
 [`additionalProperties`]|bool   |`false`|If set, MUST always be `false`
 [`minProperties`]|integer|`0`     |
 [`maxProperties`]|integer&#124;`null`|`null`|
+[[`x-visibility`]|object|`{}`   |A set of rules to conditionally control the visibility/existance of a property
 
 *Members in square brackets `[]` are optional*
 
@@ -130,6 +131,16 @@ Example:
 See [understanding-json-schema](https://spacetelescope.github.io/understanding-json-schema/reference/object.html#properties)
 
 > The properties (key-value pairs) on an object are defined using the properties keyword. The value of properties is an object, where each key is the name of a property and each value is a JSON schema used to validate that property.
+
+#### x-visibility
+
+**TODO**
+
+- See examples:
+https://github.com/phramework/schema-data_template/tree/master/data_template/x-visibility
+
+- See phramework/validate implementation
+https://github.com/phramework/validate/issues/19
 
 Supported property types are :
 - enum *(not a vanilla JSON schema)*
