@@ -85,7 +85,7 @@ key              | type |default| description
 [`additionalProperties`]|bool   |`false`|If set, MUST always be `false`
 [`minProperties`]|integer|`0`     |
 [`maxProperties`]|integer&#124;`null`|`null`|
-['x-visibility`] |object|`{}`   |A set of rules to conditionally control the visibility/existance of a property
+[[`x-visibility`]|object|`{}`   |A set of rules to conditionally control the visibility/existance of a property
 
 *Members in square brackets `[]` are optional*
 
