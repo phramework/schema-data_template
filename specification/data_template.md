@@ -82,7 +82,7 @@ key              | type |default| description
 [`title`]        |string|`null`   |Optional template's title
 [`description`]  |string|`null`   |Optional template's description
 [`meta`]         |object|`{}`     |Root object display and behavior meta
-[`additionalProperties`]|bool   |`false`|If set, MUST always be `false`
+[`additionalProperties`]|bool   |`true`|
 [`minProperties`]|integer|`0`     |
 [`maxProperties`]|integer&#124;`null`|`null`|
 [`x-visibility`] |object|`{}`   |A set of rules to conditionally control the visibility/existance of a property
