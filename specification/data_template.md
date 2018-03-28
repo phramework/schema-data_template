@@ -170,7 +170,7 @@ meta keyword members for enum:
 
 key            | type  | default    |platform| description
 ---------------|-------|------------|--------|-------------
-[`display`]    |string |`"platform"`|        |How enum component should be displayed, allowed values: `"platform"`, `"radio"`, `"select"`, `"stars"`
+[`display`]    |string |`"platform"`|        |How enum component should be displayed, allowed values: `"platform"`, `"radio"`, `"select"`, `"stars"`, `"radiobox"`
 [`enum-titles`]|object |`{}`        |        |It can define a label to display instead of enum value, it's no required to be set for all the available values.
 
 
