@@ -35,7 +35,7 @@ The terms `client` and `platforms` are synonyms for the purposes of this documen
 - Members in square brackets `[]` are optional
 - By default all member directives are supported by `all` client platforms, otherwise it must be written explicitly.
 - Value `"platform"` in enum values means that the client platform should decide
-- Default keyword member values are omitted clients **MUST** use the provided default values when they are not set.
+- When default keyword member values are omitted, clients **MUST** use the provided default values when they are not set.
 
 # JSON API resource of type data_template
 `data_template` are return in various API requests either as a single resource or a collection of resources on primary data or at included resources (Note provide links).
