@@ -8,8 +8,8 @@
       "order": 1,
       "title": "My date",
       "description": "This is my date",
-      "formatMinimum": "2015-01-09",
-      "formatMaximum": "2010-12-21"
+      "formatMinimum": "2010-01-09",
+      "formatMaximum": "2015-12-21"
     }
   },
   "required": [
